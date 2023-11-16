@@ -10,6 +10,7 @@ import webbrowser
 
 import imgviz
 import natsort
+from PyQt5.QtWidgets import QApplication
 from qtpy import QtCore
 from qtpy.QtCore import Qt
 from qtpy import QtGui
@@ -18,7 +19,7 @@ from qtpy import QtWidgets
 from labelme import __appname__
 from labelme import PY2
 
-from . import utils
+import utils
 from labelme.ai import MODELS
 from labelme.config import get_config
 from labelme.label_file import LabelFile
@@ -2149,3 +2150,13 @@ class MainWindow(QtWidgets.QMainWindow):
                     images.append(relativePath)
         images = natsort.os_sorted(images)
         return images
+
+
+
+if __name__ == "__main__":
+    import sys
+
+    app = QApplication(sys.argv)
+    w = MainWindow()
+    w.show()
+    sys.exit(app.exec())

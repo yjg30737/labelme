@@ -4,3 +4,5 @@ hacking==4.1.0
 pytest
 pytest-qt
 twine
+imgviz
+natsort
